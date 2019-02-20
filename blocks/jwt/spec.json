@@ -1,0 +1,158 @@
+{
+  "nio/JWTCreate": {
+    "version": "0.1.0",
+    "description": "generate a JWT token encrypted with the selected algorithm",
+    "categories": [
+      "Web Data"
+    ],
+    "properties": {
+      "secret": {
+        "title": "Secret",
+        "type": "StringType",
+        "description": "The secret used to encrypt the token.",
+        "default": "[[JWT_SECRET]]"
+      },
+      "algorithm": {
+        "title": "Algorithm",
+        "type": "StringType",
+        "description": "The type of encryption used to create the token",
+        "default": "HS256"
+      },
+      "claims": {
+        "title": "Claims",
+        "type": "Type",
+        "description": "Payload body as `{key: value}` pairs",
+        "default": "{{ $.to_dict() }}"
+      },
+      "output": {
+        "title": "Output Attribute",
+        "type": "StringType",
+        "description": "The attribute that will hold the token value",
+        "default": "token"
+      },
+      "enrich": {
+        "title": "Signal Enrichment",
+        "type": "ObjectType",
+        "description": "enable signal enrichment",
+        "default": {
+          "enrich_field": "",
+          "exclude_existing": true
+        }
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "any list of signals"
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "One outgoing signal containing the new token."
+      }
+    },
+    "commands": {}
+  },
+  "nio/JWTValidate": {
+    "version": "0.1.0",
+    "description": "evaluate a JWT token and determines whether it is valid, both in terms of being able to decrypt it, as well as if it is expired based on the `exp` claim",
+    "categories": [
+      "Web Data"
+    ],
+    "properties": {
+      "secret": {
+        "title": "Secret",
+        "type": "StringType",
+        "description": "The secret used to encrypt the token.",
+        "default": "[[JWT_SECRET]]"
+      },
+      "algorithm": {
+        "title": "Algorithm",
+        "type": "StringType",
+        "description": "The type of encryption used to create the token",
+        "default": "HS256"
+      },
+      "input": {
+        "title": "Input Attribute",
+        "type": "StringType",
+        "description": "The attribute that holds the token value",
+        "default": "token"
+      },
+      "enrich": {
+        "title": "Signal Enrichment",
+        "type": "ObjectType",
+        "description": "enable signal enrichment",
+        "default": {
+          "enrich_field": "",
+          "exclude_existing": true
+        }
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "any list of signals"
+      }
+    },
+    "outputs": {
+      "Valid": {
+        "description": "One signal, with a return value null"
+      },
+      "Not Valid": {
+        "description": "One signal, with a return value null"
+      }
+    },
+    "commands": {}
+  },
+  "nio/JWTRefresh": {
+    "version": "0.1.0",
+    "description": "takes a valid JWT token and returns a new token with an updated `exp` timestamp",
+    "categories": [
+      "Web Data"
+    ],
+    "properties": {
+      "secret": {
+        "title": "Secret",
+        "type": "StringType",
+        "description": "The secret used to encrypt the token.",
+        "default": "[[JWT_SECRET]]"
+      },
+      "algorithm": {
+        "title": "Algorithm",
+        "type": "StringType",
+        "description": "The type of encryption used to create the token",
+        "default": "HS256"
+      },
+      "exp": {
+        "title": "New Expiration Date",
+        "type": "Timestamp",
+        "description": "A unix timestamp to update in the token payload",
+        "default": "{{ datetime.datetime.now() + datetime.timedelta(minutes=60) }}"
+      },
+      "output": {
+        "title": "Output Attribute",
+        "type": "StringType",
+        "description": "The attribute that will hold the token value",
+        "default": "token"
+      },
+      "enrich": {
+        "title": "Signal Enrichment",
+        "type": "ObjectType",
+        "description": "enable signal enrichment",
+        "default": {
+          "enrich_field": "",
+          "exclude_existing": true
+        }
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "any list of signals"
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "One outgoing signal containing the updated token."
+      }
+    },
+    "commands": {}
+  }
+}

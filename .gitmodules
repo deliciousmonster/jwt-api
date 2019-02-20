@@ -31,3 +31,12 @@
 [submodule "blocks/logger"]
 	path = blocks/logger
 	url = https://github.com/nio-blocks/logger
+[submodule "blocks/web_handler"]
+	path = blocks/web_handler
+	url = git://github.com/nio-blocks/web_handler.git
+[submodule "blocks/mongo"]
+	path = blocks/mongo
+	url = git://github.com/nio-blocks/mongo.git
+[submodule "blocks/hmac"]
+	path = blocks/hmac
+	url = git://github.com/nio-blocks/hmac.git

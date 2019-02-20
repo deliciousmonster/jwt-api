@@ -1,5 +1,5 @@
 {
-    "Admin": {"password": "QWRtaW4="},
-    "User": {"password": "VXNlcg=="},
-    "Guest": {"password": "R3Vlc3Q="}
+    "Admin": {
+        "password": "$2b$12$FkmFXarBR98LWvMQtWgZteZHuTFJSggc.TTY/99uJtly59x9r.uom"
+    }
 }
