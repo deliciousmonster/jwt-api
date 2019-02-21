@@ -40,3 +40,6 @@
 [submodule "blocks/hmac"]
 	path = blocks/hmac
 	url = git://github.com/nio-blocks/hmac.git
+[submodule "blocks/jwt"]
+	path = blocks/jwt
+	url = git://github.com/nio-blocks/jwt.git
