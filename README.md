@@ -9,54 +9,11 @@ A nio project that creates a JWT-based Authentication Microservice backed by a M
 - **Refresh Token**: users can submit a valid token and receive a new token with an expiration date set in the future.
 - **Validate Token**: users can submit a token and find whether it is valid, both in terms of being able to decrypt it, as well as (optionally) if it is expired based on the `exp` claim.
 
-## How to Use
-
-  nio new jwt-auth-microservice
-
-### Clone Using the nio CLI
-
-You can create a new project directory with the nio-cli
+## Install using the nio CLI
 
   ```
-    pip3 install nio-cli
-    nio new <new_project_name>
+  nio new jwt-auth-microservice --template https://github.com/deliciousmonster/jwt-api
   ```
-
-### Clone Using Git
-
-To clone the project template using Git
-1. Create a shallow clone of the template.
-    ```
-    git clone --depth=1 https://github.com/niolabs/project_template.git <new_project_name>
-    ```
-1. Navigate to your new project directory.
-    ```
-    cd <new_project_name>
-    ```
-1. Initialize the submodules containing the blocks and the service test tools.
-    ```
-    git submodule update --init --recursive
-    ```
-1. Remove the tracking link to the original template repository.
-    ```
-    git remote remove origin
-    ```
-1. Reset ownership to yourself.
-    ```
-    git commit --amend --reset-author -m "Initial Commit"
-    ```
-To push your project to GitHub (or another remote repository)
-
-1. Create a new online repository for your project.
-1. Copy the unique URL for your new repository to your clipboard.
-1. In your local repository, from the command line, add the remote tracking information for the new repository.
-    ```
-    git remote add origin <new_project_repo_URL>
-    ```
-1. Push to a branch (usually `master`).
-    ```
-    git push --set-upstream origin master
-    ```
 
 ## File Reference
 

@@ -74,4 +74,3 @@ logs/
 etc/persist/
 nio.err
 etc/api_key.cfg
-nio.conf
