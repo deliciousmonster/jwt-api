@@ -1,10 +1,17 @@
-# Project Template
+# JWT Auth Microservice
 
-The Project Template is a base template used to create a new nio project with the recommended files and file structure.
+A nio project that creates a JWT-based Authentication Microservice backed by a MongoDB.
+
+## Features
+
+- **Sign up**: users can sign up with a username and password.
+- **Log in**: log in with username and password and receive a JWT token with a configurable expiration date.
+- **Refresh Token**: users can submit a valid token and receive a new token with an expiration date set in the future.
+- **Validate Token**: users can submit a token and find whether it is valid, both in terms of being able to decrypt it, as well as (optionally) if it is expired based on the `exp` claim.
 
 ## How to Use
 
-  Clone this project template using the nio command line interface (CLI) or Git.
+  nio new jwt-auth-microservice
 
 ### Clone Using the nio CLI
 
