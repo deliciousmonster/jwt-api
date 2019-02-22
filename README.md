@@ -12,7 +12,7 @@ A nio project that creates a JWT-based Authentication Microservice backed by a M
 ## Install using the nio CLI
 
   ```
-  nio new jwt-auth-microservice --template https://github.com/deliciousmonster/jwt-api
+  nio new jwt-auth-microservice --pubkeeper-hostname <your-system-id>.pubkeeper.nio.works --pubkeeper-token <your-pk-token> --template https://github.com/deliciousmonster/jwt-api && cd jwt-auth-microservice && pip3 install -r requirements.txt && niod
   ```
 
 ## File Reference
