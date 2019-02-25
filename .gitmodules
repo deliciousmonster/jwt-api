@@ -46,3 +46,6 @@
 [submodule "blocks/uuid"]
 	path = blocks/uuid
 	url = git://github.com/nio-blocks/uuid.git
+[submodule "blocks/mailgun"]
+	path = blocks/mailgun
+	url = https://github.com/nio-blocks/mailgun.git
