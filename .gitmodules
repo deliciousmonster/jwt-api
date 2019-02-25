@@ -43,3 +43,6 @@
 [submodule "blocks/jwt"]
 	path = blocks/jwt
 	url = git://github.com/nio-blocks/jwt.git
+[submodule "blocks/uuid"]
+	path = blocks/uuid
+	url = git://github.com/nio-blocks/uuid.git
